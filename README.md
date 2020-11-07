@@ -56,23 +56,23 @@ get_images(url) #call function with our new URL
 Once you run this it will go and look for top 15 images and alt text that your page have and will createa  DataFrame with current alt text, URL and recommended alt text.
 
 
-| alt text                     | img src                                                                                                         | recommended alt                                                     |   |   |
-|------------------------------|-----------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------|---|---|
-| Image of the month: November | https://www.uselessthingstobuy.com/logos/November.png                                                           | steve the jumping dinosaur Dinosaur Widget Jumping Steve: 8bit Game |   |   |
-|                              | https://www.uselessthingstobuy.com/wp-content/uploads/2020/10/Screen-Shot-2020-10-17-at-11.50.20-AM-300x300.png | grip and tricks all five rider box Grip & Tricks Finger Roller      |   |   |
-|                              | https://www.uselessthingstobuy.com/wp-content/uploads/2020/10/Screen-Shot-2020-10-17-at-11.50.05-AM-300x300.png | grip and tricks inline skates 4 pack Inline skates                  |   |   |
-|                              | https://www.uselessthingstobuy.com/wp-content/uploads/2020/10/Screen-Shot-2020-10-14-at-10.15.47-AM-300x300.png | titanic tea infuser Tea                                             |   |   |
-|                              | https://www.uselessthingstobuy.com/wp-content/uploads/2020/10/Screen-Shot-2020-10-14-at-10.15.36-AM-300x300.png | Brand: Fred & Friends Fred Tea Infuser Tea                          |   |   |
-|                              | https://www.uselessthingstobuy.com/wp-content/uploads/2020/08/b8gqhjx3uwf51-300x300.jpg                         | chicken feet socks Chicken                                          |   |   |
-|                              | https://www.uselessthingstobuy.com/wp-content/uploads/2020/08/Screen-Shot-2020-08-09-at-10.17.25-PM-300x300.png | calcetas de pollo Knee highs                                        |   |   |
-| trump putin 2020 car shade   | https://www.uselessthingstobuy.com/wp-content/uploads/2020/07/trump_putin_2020_car_shade-300x300.jpg            | funny windshield sun shade Windshield                               |   |   |
-| kim trump putin car shade    | https://www.uselessthingstobuy.com/wp-content/uploads/2020/07/kim_trump_putin_2020-300x300.jpg                  | funny car sun shade Car                                             |   |   |
-| bottle cap gun launcher      | https://www.uselessthingstobuy.com/wp-content/uploads/2020/03/bottle-cap-gun-launcher-1-300x300.jpg             | cap gun bottle opener Bottle opener                                 |   |   |
-|                              | https://www.uselessthingstobuy.com/wp-content/uploads/2020/03/bottle-cap-gun-launcher-300x300.jpg               | hand Bottle opener                                                  |   |   |
-| creepy unicorn mask          | https://www.uselessthingstobuy.com/wp-content/uploads/2020/03/creepy_unicorn_mask-300x300.jpg                   | Mask Mask                                                           |   |   |
-| creepy unicorn mask          | https://www.uselessthingstobuy.com/wp-content/uploads/2020/03/creepy_unicorn-300x300.jpg                        | snout Mask                                                          |   |   |
-| lego builder mug             | https://www.uselessthingstobuy.com/wp-content/uploads/2020/03/lego_builder_mug-300x300.jpg                      | lego mug Build-On Brick Mug-Red                                     |   |   |
-| trump fortune teller         | https://www.uselessthingstobuy.com/wp-content/uploads/2020/03/trump_fortune_teller-300x300.jpg                  | president predicto donald trump fortune teller ball Magic 8-Ball    |   |   |
+| alt text                     | img src                                                                                                         | recommended alt                                                                    |
+|------------------------------|-----------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------|
+| Image of the month: November | https://www.uselessthingstobuy.com/logos/November.png                                                           | steve the jumping dinosaur Dinosaur                                                |
+|                              | https://www.uselessthingstobuy.com/wp-content/uploads/2020/10/Screen-Shot-2020-10-17-at-11.50.20-AM-300x300.png | grip and tricks all five rider box Grip & Tricks Finger Roller                     |
+|                              | https://www.uselessthingstobuy.com/wp-content/uploads/2020/10/Screen-Shot-2020-10-17-at-11.50.05-AM-300x300.png | grip and tricks inline skates 4 pack GRIP&TRICKS                                   |
+|                              | https://www.uselessthingstobuy.com/wp-content/uploads/2020/10/Screen-Shot-2020-10-14-at-10.15.47-AM-300x300.png | titanic tea infuser Tea                                                            |
+|                              | https://www.uselessthingstobuy.com/wp-content/uploads/2020/10/Screen-Shot-2020-10-14-at-10.15.36-AM-300x300.png | Brand: Fred & Friends Fred Tea Infuser Tea                                         |
+|                              | https://www.uselessthingstobuy.com/wp-content/uploads/2020/08/b8gqhjx3uwf51-300x300.jpg                         | chicken feet socks Chicken                                                         |
+|                              | https://www.uselessthingstobuy.com/wp-content/uploads/2020/08/Screen-Shot-2020-08-09-at-10.17.25-PM-300x300.png | calcetas de pollo MOXY Socks Girl's Chicken Legs Knee-High Fitness   Novelty Socks |
+| trump putin 2020 car shade   | https://www.uselessthingstobuy.com/wp-content/uploads/2020/07/trump_putin_2020_car_shade-300x300.jpg            | funny windshield sun shade Windshield                                              |
+| kim trump putin car shade    | https://www.uselessthingstobuy.com/wp-content/uploads/2020/07/kim_trump_putin_2020-300x300.jpg                  | funny car sun shade Car                                                            |
+| bottle cap gun launcher      | https://www.uselessthingstobuy.com/wp-content/uploads/2020/03/bottle-cap-gun-launcher-1-300x300.jpg             | cap gun bottle opener Wine                                                         |
+|                              | https://www.uselessthingstobuy.com/wp-content/uploads/2020/03/bottle-cap-gun-launcher-300x300.jpg               | hand Bottle opener                                                                 |
+| creepy unicorn mask          | https://www.uselessthingstobuy.com/wp-content/uploads/2020/03/creepy_unicorn_mask-300x300.jpg                   | Mask Mask                                                                          |
+| creepy unicorn mask          | https://www.uselessthingstobuy.com/wp-content/uploads/2020/03/creepy_unicorn-300x300.jpg                        | snout Mask                                                                         |
+| lego builder mug             | https://www.uselessthingstobuy.com/wp-content/uploads/2020/03/lego_builder_mug-300x300.jpg                      | lego mug Build-On Brick Mug-Red                                                    |
+| trump fortune teller         | https://www.uselessthingstobuy.com/wp-content/uploads/2020/03/trump_fortune_teller-300x300.jpg                  | president predicto donald trump fortune teller ball Magic 8-Ball                   |
 
 If you weant to remove the limit you can comment it out by adding a # on line 175
 
