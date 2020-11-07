@@ -1,0 +1,12 @@
+
+beautifulsoup4==4.8.2
+google-api-core==1.23.0
+google-api-python-client==1.10.0
+google-auth==1.22.1
+google-auth-httplib2==0.0.4
+google-auth-oauthlib==0.4.1
+google-cloud-vision==2.0.0
+googleapis-common-protos==1.52.0
+numpy==1.18.1
+pandas==1.0.1
+selenium==3.141.0

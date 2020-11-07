@@ -16,7 +16,7 @@ import os
 # Vision API
 from google.cloud import vision
 
-#Here we add url.
+#Test URL
 url = "https://www.espn.com"
 
 def get_images(url):
@@ -44,7 +44,7 @@ def get_images(url):
 
     chrome_options = Options()
     #chrome_options.add_argument('--incognito')
-    #chrome_options.add_argument('--headless')
+    chrome_options.add_argument('--headless')
     #chrome_options.add_argument('--no-sandbox')
     
     driver = webdriver.Chrome(options=chrome_options,executable_path='/usr/local/bin/chromedriver')  # Optional argument, if not specified will search path.
@@ -172,7 +172,7 @@ def cleaning(alt_txt,img_url):
 
 
     #limiting only top 11 images from list( So that the api costs are not that high :D )
-    df = df.head(15)
+    #df = df.head(15)
     
     #here we run our function for alt tet recommendations.
     reco_alt = []
@@ -188,6 +188,8 @@ def cleaning(alt_txt,img_url):
     #return Response(json_hist, mimetype='application/json')
 
     print(df)
+    
+    df.to_csv('alt_text.csv', index = False)
     
     
     ### We might need this later, for now we will suggest top 15 images alt text ###
@@ -258,12 +260,16 @@ def detect_web(uri):
             print('\n\tScore      : {}'.format(entity.score))
             print(u'\tDescription: {}'.format(entity.description))
             
-
-    alt = best_label[0] +' ' +  web_entities[0]
+    try:
+        
+        alt = best_label[0] +' ' +  web_entities[0]
+        print('recomended alt text: ', alt)
+        return alt
     
-    print('recomended alt text: ', alt)
+    except:
+        print('fuckit')
     
-    return alt
+    
 
 
     if response.error.message:
@@ -272,8 +278,6 @@ def detect_web(uri):
             'https://cloud.google.com/apis/design/errors'.format(
                 response.error.message))    
     
-
-get_images(url)
 
 
 
