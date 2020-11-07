@@ -1,6 +1,6 @@
 # Image recognition Alt text Generator
 
-This Python script get the top 15 images on a URL and check the current alt text and the scans each image URL and recommends a new alt text based on what Google vision API see.
+This Python script helps you with alternative text for images on your site. The way Google indexes images for SEO is by reading the alt text of the image. This script uses Google Vision API to recommend you alt text on your site. It can be current images with alt text or images without alt text.
 
 
 ## Installation
