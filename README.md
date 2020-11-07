@@ -1,7 +1,5 @@
 # Image recognition Alt text Generator
 
-Foobar is a Python library for dealing with word pluralization.
-
 This Python script get the top 15 images on a URL and check the current alt text and the scans each image URL and recommends a new alt text based on what Google vision API see.
 
 
@@ -37,7 +35,6 @@ Once you have the file you need to update line 223 and add your path to you .jso
 ```python
     client = vision.ImageAnnotatorClient.from_service_account_json("add your PATH here")
 ```
-
 
 ## Usage
 
