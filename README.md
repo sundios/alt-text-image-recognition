@@ -38,7 +38,7 @@ Once you have the file you need to update line 223 and add your path to you .jso
 
 ## Usage
 
-Using this script is very easy. You can import it and set a new url variable and then call the get_url(ulr) function.
+Using this script is very easy. You can import it and set a new url variable and then call the get_images(ulr) function.
 
 
 ```python
