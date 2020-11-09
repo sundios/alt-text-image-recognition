@@ -17,7 +17,7 @@ import os
 from google.cloud import vision
 
 #Test URL
-url = "https://www.espn.com"
+url = "www.tuves.com/" # dont add https://
 
 def get_images(url):
     
@@ -44,11 +44,11 @@ def get_images(url):
 
     chrome_options = Options()
     #chrome_options.add_argument('--incognito')
-    chrome_options.add_argument('--headless')
+    #chrome_options.add_argument('--headless')
     #chrome_options.add_argument('--no-sandbox')
     
     driver = webdriver.Chrome(options=chrome_options,executable_path='/usr/local/bin/chromedriver')  # Optional argument, if not specified will search path.
-    driver.get(url)
+    driver.get('https://' + url)
     
     #scrolling to bottom to load all images on the page
     driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
@@ -147,32 +147,69 @@ def cleaning(alt_txt,img_url):
             clean_alt.append(b)
         else:
             print(i, 'not image')
+    
     #df with clean data       
     df = pd.DataFrame(list(zip(clean_alt,clean_urls)),
                       columns=['alt text','img src'])
     
     
-    
-    #checking if it has https
+    #checking if src links are absolute or relative
     clean_urls= []
     clean_alt = []
-    for i,b in zip (df['img src'], df['alt text']):    
-        if "https" not in i:
-            print('not https:')
-            clean_urls.append('https:' + i)
+    for i,b in zip (df['img src'], df['alt text']):
+        if url not in i:
+            print('relative, doesnt contain' ,url)
+            clean_urls.append(url + i)
+            clean_alt.append(b)
+        else:
+            print('absolute, it does contain', url)
+            clean_urls.append(i)
+            clean_alt.append(b)
+            
+    #clean DF 
+    df = pd.DataFrame(list(zip(clean_alt,clean_urls)),
+                      columns=['alt text','img src'])
+    
+    
+    #checking https when there is no https://
+    clean_urls= []
+    clean_alt = []
+    for i,b in zip (df['img src'], df['alt text']):
+        if "https://" not in i:
+            print('not https://')
+            clean_urls.append('https://' + i)
             clean_alt.append(b)
         else:
             print('its https')
             clean_urls.append(i)
             clean_alt.append(b)
-     
+             
     #clean DF 
     df = pd.DataFrame(list(zip(clean_alt,clean_urls)),
                       columns=['alt text','img src'])
+    
+    #check if url contains 4 ////  (this is stupid)
+    clean_urls= []
+    clean_alt = []
+    for i,b in zip (df['img src'], df['alt text']):
+        if "////" in i:
+            print('it has ////')
+            x = i.replace('////','//')
+            clean_urls.append(x)
+            clean_alt.append(b)
+        else:
+            print('its https')
+            clean_urls.append(i)
+            clean_alt.append(b)
+             
+    #clean DF 
+    df = pd.DataFrame(list(zip(clean_alt,clean_urls)),
+                      columns=['alt text','img src'])
+    
 
 
     #limiting only top 11 images from list( So that the api costs are not that high :D )
-    #df = df.head(15)
+    df = df.head(15)
     
     #here we run our function for alt tet recommendations.
     reco_alt = []
@@ -273,10 +310,13 @@ def detect_web(uri):
 
 
     if response.error.message:
+        alt = 'Error! Try Again'
         raise Exception(
             '{}\nFor more info on error messages, check: '
             'https://cloud.google.com/apis/design/errors'.format(
-                response.error.message))    
+                response.error.message)) 
+        
+       
     
 
 
