@@ -40,12 +40,14 @@ Once you have the file you need to update line 223 and add your path to you .jso
 
 Using this script is very easy. You can import it and set a new url variable and then call the get_images(ulr) function.
 
+** Dont add https://
+
 
 ```python
 import alt
 
 
-url = 'https://www.uselessthingstobuy.com/gifts/gifts-under-25/' # Overwrites url in the script
+url = 'www.uselessthingstobuy.com/gifts/gifts-under-25/' # Overwrites url in the script and dont include https://
 get_images(url) #call function with our new URL
 
 ```
