@@ -17,8 +17,7 @@ import os
 from google.cloud import vision
 
 #Test URL
-url = "www.tuves.com/" # dont add https://
-
+url = "www.imdb.com/"
 def get_images(url):
     
     # =============================================================================
@@ -153,22 +152,22 @@ def cleaning(alt_txt,img_url):
                       columns=['alt text','img src'])
     
     
-    #checking if src links are absolute or relative
-    clean_urls= []
-    clean_alt = []
-    for i,b in zip (df['img src'], df['alt text']):
-        if url not in i:
-            print('relative, doesnt contain' ,url)
-            clean_urls.append(url + i)
-            clean_alt.append(b)
-        else:
-            print('absolute, it does contain', url)
-            clean_urls.append(i)
-            clean_alt.append(b)
+    # #checking if src links are absolute or relative
+    # clean_urls= []
+    # clean_alt = []
+    # for i,b in zip (df['img src'], df['alt text']):
+    #     if url not in i:
+    #         print('relative, doesnt contain' ,url)
+    #         clean_urls.append(url + i)
+    #         clean_alt.append(b)
+    #     else:
+    #         print('absolute, it does contain', url)
+    #         clean_urls.append(i)
+    #         clean_alt.append(b)
             
-    #clean DF 
-    df = pd.DataFrame(list(zip(clean_alt,clean_urls)),
-                      columns=['alt text','img src'])
+    # #clean DF 
+    # df = pd.DataFrame(list(zip(clean_alt,clean_urls)),
+    #                   columns=['alt text','img src'])
     
     
     #checking https when there is no https://
