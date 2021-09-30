@@ -5,11 +5,11 @@ This Python script helps you with alternative text for images on your site. The 
 
 ## Installation
 
-To use this script there are a some libraries and some setup to do in order tu run it succesfully.
+To use this script, there are some libraries and some setups to run it successfully.
 
 ### Requirements.txt
 
-First we need to install the important libraries we are using for that we can run our `requirements.txt`
+First, we need to install the important libraries we are using for that we can run our `requirements.txt`
 
 ```bash
 pip install requirements.txt
@@ -17,18 +17,18 @@ pip install requirements.txt
 
 ### Selenium chromedriver
 
-Once we have our libraries installed, we need to install chromedriver and on line 50 we need to specify the `executable_path='` 
+Once we have our libraries installed, we need to install chromedriver , and on line 50 we need to specify the `executable_path='` 
 
 ```python
 driver = webdriver.Chrome(options=chrome_options,executable_path='/usr/local/bin/chromedriver')  # <----Here
 ```
 
-To learn more about how to set up this you can [click here](https://chromedriver.chromium.org/getting-started)
+To learn more about how to set up this, you can [click here](https://chromedriver.chromium.org/getting-started)
 
 ### Google Vision API
 
-Finally we need to get our Google vision API activated and get our `.json` file with our keys.
-To activate the API and get the .json api with your private key please follow [Google instructions here](https://cloud.google.com/vision/docs/setup). If you have any problem please create an issue and I will be happy to help.
+Finally, we need to get our Google vision API activated and get our `.json` file with our keys.
+To activate the API and get the .json API with your private key, please follow [Google instructions here](https://cloud.google.com/vision/docs/setup). If you have any problem, please create an issue, and I will be happy to help.
 
 Once you have the file you need to update line 223 and add your path to you .json file
 
@@ -73,7 +73,7 @@ Once you run this it will go and look for top 15 images and alt text that your p
 | lego builder mug             | https://www.uselessthingstobuy.com/wp-content/uploads/2020/03/lego_builder_mug-300x300.jpg                      | lego mug Build-On Brick Mug-Red                                                    |
 | trump fortune teller         | https://www.uselessthingstobuy.com/wp-content/uploads/2020/03/trump_fortune_teller-300x300.jpg                  | president predicto donald trump fortune teller ball Magic 8-Ball                   |
 
-If you weant to remove the limit you can comment it out by adding a # on line 175
+If you want to remove the limit, you can comment it out by adding a # on line 175
 
 ```python
 #limiting only top 11 images from list( So that the api costs are not that high :D )
@@ -82,5 +82,5 @@ If you weant to remove the limit you can comment it out by adding a # on line 17
 ```
 
 ## Contributing
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+Pull requests are welcome. For significant changes, please open an issue first to discuss what you would like to change.
 
